@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Football League Admin Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Football League Admin Portal</h1>
+<p>8-Team Championship Management System</p>
+</header>
+<nav>
+<a href="#registerSection">Register</a>
+<a href="#matchSection">Matches</a>
+<a href="#tableSection">Standings</a>
+<a href="#rulesSection">Rules</a>
+</nav>
+<div class="container">
+<section id="registerSection">
+<h2>1. Register Team (<span id="cnt">0</span>/8)</h2>
+<label>Team Name:</label>
+<input id="tName" placeholder="Enter club name">
+<label>Squad Size (11 to 25 players):</label>
+<input type="number" id="tSquad" min="11" max="25" placeholder="Enter squad count">
+<button onclick="addTeam()">Add Team</button>
+</section>
+<section id="matchSection">
+<h2>2. Record Match Result</h2>
+<label>Home Team:</label>
+<select id="home"></select>
+<label>Home Goals:</label>
+<input type="number" id="hg" value="0" min="0">
+<label>Away Team:</label>
+<select id="away"></select>
+<label>Away Goals:</label>
+<input type="number" id="ag" value="0" min="0">
+<button onclick="recordMatch()">Update Match</button>
+<button class="undo" onclick="undoMatch()">Undo Last Match</button>
+</section>
+<section id="tableSection">
+<h2>3. Points Table</h2>
+<table id="tbl">
+<tr><th>No</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th><th>Action</th></tr>
+</table><br>
+<button onclick="resetAll()" style="background:#555">Reset All Data</button>
+</section>
+<section id="rulesSection" style="border:none">
+<h2>4. League Rules</h2>
+<ul>
+<li>Maximum 8 teams. Squad size: 11 to 25 players.</li>
+<li>Win = 3 points, Draw = 1 point, Loss = 0 points.</li>
+</ul>
+</section>
+</div>
+<footer>
+<p>&copy; 2026 Football League Management System | 1st Sem B.Tech CSE</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
